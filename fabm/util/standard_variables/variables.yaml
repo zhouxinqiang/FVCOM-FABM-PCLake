@@ -1,0 +1,105 @@
+# This file defines all standard variables known to FABM.
+# It is the ONLY authoritative source of this information.
+# This script parse_standard_variables.py parses this file
+# to generate the standard variable include files as well
+# as the text on the wiki.
+interior:
+  - name: alkalinity_expressed_as_mole_equivalent
+    units: mmol m-3
+  - name: attenuation_coefficient_of_photosynthetic_radiative_flux
+    units: m-1
+    aggregate_variable: true
+  - name: attenuation_coefficient_of_shortwave_flux
+    units: m-1
+    aggregate_variable: true
+  - name: cell_thickness
+    units: m
+  - name: density
+    units: kg m-3
+  - name: depth
+    units: m
+  - name: downwelling_photosynthetic_radiative_flux
+    units: W m-2
+  - name: downwelling_shortwave_flux
+    units: W m-2
+  - name: mass_concentration_of_suspended_matter
+    units: g m-3
+  - name: mole_concentration_of_ammonium
+    units: mmol m-3
+  - name: mole_concentration_of_carbonate_expressed_as_carbon
+    units: mmol m-3
+  - name: mole_concentration_of_dissolved_inorganic_carbon
+    units: mmol m-3
+  - name: mole_concentration_of_dissolved_iron
+    units: umol m-3
+  - name: mole_concentration_of_nitrate
+    units: mmol m-3
+  - name: mole_concentration_of_phosphate
+    units: mmol m-3
+  - name: mole_concentration_of_silicate
+    units: mmol m-3
+  - name: ph_reported_on_total_scale
+    units: 1
+  - name: practical_salinity
+    units: 1e-3
+  - name: pressure
+    units: dbar
+  - name: temperature
+    units: degree_Celsius
+  - name: fractional_saturation_of_oxygen
+    units: 1
+  - name: secchi_depth
+    units: m
+  - name: net_rate_of_absorption_of_shortwave_energy_in_layer
+    units: W m-2
+horizontal:
+  - name: bottom_depth_below_geoid
+    units: m
+  - name: bottom_depth
+    units: m
+  - name: bottom_roughness_length
+    units: m
+  - name: bottom_stress
+    units: Pa
+  - name: cloud_area_fraction
+    units: 1
+  - name: surface_downwelling_photosynthetic_radiative_flux
+    units: W m-2
+  - name: surface_downwelling_photosynthetic_radiative_flux_in_air
+    units: W m-2
+    synonyms: [downwelling_photosynthetic_radiative_flux_in_air]
+  - name: surface_downwelling_shortwave_flux
+    units: W m-2
+  - name: surface_downwelling_shortwave_flux_in_air
+    units: W m-2
+    synonyms: [downwelling_shortwave_flux_in_air]
+  - name: latitude
+    units: degree_north
+  - name: longitude
+    units: degree_east
+  - name: mole_fraction_of_carbon_dioxide_in_air
+    units: 1e-6
+  - name: wind_speed
+    units: m s-1
+  - name: surface_specific_humidity
+    units: 1
+  - name: surface_air_pressure
+    units: Pa
+  - name: surface_temperature
+    units: degree_Celsius
+  - name: ice_area_fraction
+    units: 1
+global:
+  - name: number_of_days_since_start_of_the_year
+    units: d
+conserved:
+  - name: total_carbon
+    units: mmol m-3
+  - name: total_nitrogen
+    units: mmol m-3
+  - name: total_phosphorus
+    units: mmol m-3
+  - name: total_silicate
+    units: mmol m-3
+  - name: total_iron
+    units: umol m-3

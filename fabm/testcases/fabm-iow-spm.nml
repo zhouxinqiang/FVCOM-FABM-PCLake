@@ -1,0 +1,56 @@
+!-------------------------------------------------------------------------------
+! fabm_nml
+!-------------------------------------------------------------------------------
+! models             [string array]
+!                     a comma-separated list of one or model model names
+!-------------------------------------------------------------------------------
+&fabm_nml
+   models = 'iow_spm', 'iow_spm'
+/
+
+! diameter             : particle diameter in mikrons
+! c_init               : initial concentration in mg/l
+! thickness_L1         :  thickness of transport layer [m]
+! M0                   : erosion constant for resuspension_model=0  [g/m^2/s]
+! M1                   : erosion constant for resuspension_model=1  [1/s]
+! sinking_method       : 0 - constant sinking speed - ws_const [m/s]
+!                        1 - Soulsby 1997
+!                        2 - Stokes/Newton
+! bottom_stress_method : 0 - constant critical stress - tauc_const [Pa]
+!                        1 - Soulsby 1990
+!                        2 - van Rijn 1984
+! bedload_method       : 0 - no bedload (note that bed load is for 1D models only diagnostic)
+!                        1 - van Rijn 1984
+!                        2 - Nielsen 1992
+!                        3 - Engelund & Hansen 1972
+! resuspension_model   : 0 - Zero order resuspension E=M0*(taub/taubc-1)
+!                        1 - First order resuspension E=M1*mass_in_layer*(taub/taubc-1)
+! stressexponent       : flux = M[0|1]*(taub/tauc-1)**stressexponent
+!                               1.5 for sand and 1.0 for mud/cohesive
+! shading               [1/m per mg/l]
+! rho                  : dry bed density kg/m**3 [default 2650]
+! sand_mud_interaction : switch on sand-mud interaction (only the low mud limit) [true|false]
+! mudpool_variable     : name of the external mudpool variable [i.e. 'iow_spm01_pmpool']
+!
+! for details, have a look into the code!
+
+&iow_spm
+   diameter=60
+   thickness_L1=0.1
+   M0=3e-3
+   sinking_method=1
+   bottom_stress_method=1
+   resuspension_model=0
+   bedload_method=1
+/
+
+&iow_spm
+   diameter=60
+   thickness_L1=0.1
+   M0=3e-3
+   M1=1e-5
+   sinking_method=1
+   bottom_stress_method=1
+   resuspension_model=1
+   bedload_method=3
+/

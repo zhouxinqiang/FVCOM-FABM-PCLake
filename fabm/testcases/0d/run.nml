@@ -1,0 +1,37 @@
+&model_setup
+title='test'
+start="1998-01-01 00:00:00"
+stop="1999-01-01 00:00:00"
+dt=1800
+ode_method=3
+repair_state=.false.
+/
+
+!-------------------------------------------------------------------
+! swr_method: 0 - calculate from cloud,time,lon,lat
+!             1 - read from file, but calculate PAR incl. extinction
+!             2 - read from file, assume values to be PAR
+! ------------------------------------------------------------------
+
+&environment
+env_file='env_nns_annual.dat'
+swr_method=0
+albedo_correction=.true.
+latitude=54.0
+longitude=9.0
+cloud=0.0
+par_fraction=1.0
+depth=10.
+par_background_extinction=0.05
+apply_self_shading=.false.
+/
+
+&output
+output_format=1
+output_format=2
+output_file='output.dat'
+nsave=6
+add_environment=.true.
+add_conserved_quantities=.false.
+add_diagnostic_variables=.true.
+/
